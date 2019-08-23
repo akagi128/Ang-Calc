@@ -1,0 +1,75 @@
+<html lang="en" ng-app="myUserApp">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<style type="text/css">
+body {
+    font-family: 'Montserrat';
+}
+input {
+    margin-left: 20px;
+width: 50px;
+}
+.calculator {
+    animation: fadeIn 2s forwards;
+    border-radius: 20px;
+    width: 450px;
+    height: 250px;
+    margin-top: 100px;
+    margin-left: 425px;
+    padding: 50px;
+    border: 1px solid red;
+    background: white;
+    color: black;
+    transition: .6s;
+}
+.calculator:hover {
+    border-radius: 20px;
+    width: 450px;
+    height: 250px;
+    margin-top: 100px;
+    margin-left: 425px;
+    padding: 50px;
+    border: 1px solid red;
+    background: red;
+    color: white;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>
+<body >
+    <div class = "calculator">
+<div ng-controller="UserController">
+    Calculator
+    <p>
+        <hr>
+    </p>
+<strong>Add These Numbers :</strong> 
+<input type="number" ng-model="a"> + <input type="number" ng-model="b"> = {{add(a,b)}}
+<p>
+<strong>Multiply These Numbers : </strong>
+<input type="number" ng-model="a"> X <input type="number" ng-model="b"> = {{multiply(a,b)}}
+<p>
+<strong>Divide These Numbers : </strong>
+<input type="number" ng-model="a"> / <input type="number" ng-model="b"> = {{divide(a,b)}}
+<p>
+<strong>Exponentiate These Numbers : </strong>
+<input type="number" ng-model="a"> ^ <input type="number" ng-model="b"> = {{exponentiate(a,b)}}
+<p>
+        <strong>Subtract These Numbers : </strong>
+        <input type="number" ng-model="a"> - <input type="number" ng-model="b"> = {{subtract(a,b)}}
+</div>
+</div>
+</body>
+</html>
